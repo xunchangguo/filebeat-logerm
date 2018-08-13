@@ -1,0 +1,42 @@
+{
+  "description": "Pipeline for parsing oplog log logs",
+  "processors": [{
+    "grok": {
+      "field": "message",
+      "patterns":[
+	     "%{TIMESTAMP_ISO8601:timestamp} \\[%{DATA:thread}\\] %{LOGLEVEL:level} %{JAVACLASS:class} - %{JAVALOGMESSAGE:logmessage}",
+		 "\\[%{OPS:optype}\\] %{OPTIME:timestamp} %{NUMBER:st} %{DATA:ap} %{DATA:apn} %{DATA:op} %{DATA:opn} %{IP:ip} %{USERNAME:ty} %{DATA:ob} %{DATA:obn} %{JAVALOGMESSAGE:co}"
+        ],
+      "pattern_definitions": {
+        "OPS": "OP",
+		"OPTIME": "%{YEAR}/%{MONTHNUM}/%{MONTHDAY}[T ]%{ISO8601_HOUR}:?%{MINUTE}(?::?%{SECOND})?%{ISO8601_TIMEZONE}?"
+      },
+      "ignore_missing": true
+    }
+  },{
+    "remove":{
+      "field": "message"
+    }
+  }, {
+    "rename": {
+      "field": "@timestamp",
+      "target_field": "read_timestamp"
+    }
+  }, {
+    "date": {
+      "field": "timestamp",
+      "target_field": "@timestamp",
+      "formats": ["YYYY/MM/dd H:m:s.SSS","YYYY-MM-dd H:m:s,SSS"]
+    }
+  },{
+    "remove":{
+      "field": "timestamp"
+    }
+  }],
+  "on_failure" : [{
+    "set" : {
+      "field" : "error.message",
+      "value" : "{{ _ingest.on_failure_message }}"
+    }
+  }]
+}

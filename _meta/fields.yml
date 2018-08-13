@@ -1,0 +1,9 @@
+- key: oplog
+  title: "oplog"
+  description: >
+    oplog Module
+  fields:
+    - name: oplog
+      type: group
+      description: >
+      fields:
