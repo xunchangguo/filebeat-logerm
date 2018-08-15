@@ -1,58 +1,60 @@
-- name: timestamp
-  description: log time
+- name: log
+  description: Please add description
   example: Please add example
-- name: thread
-  description: java thread name
-  example: Please add example
-  type: text
-- name: level
-  description: log level
-  example: Please add example
-  type: keyword
-- name: class
-  description: java class
-  example: Please add example
-- name: logmessage
-  description: log message
-  example: Please add example
-- name: optype
-  description: oplog
-  example: Please add example
-- name: st
-  description: operation status/result
-  example: Please add example
-  type: long
-- name: ap
-  description: application id
-  example: Please add example
-  type: text
-- name: apn
-  description: application name
-  example: Please add example
-  type: text
-- name: op
-  description: op user
-  example: Please add example
-  type: text
-- name: opn
-  description: op user name
-  example: Please add example
-  type: text
-- name: ip
-  description: ip address
-  example: Please add example
-- name: ty
-  description: operation object type
-  example: Please add example
-  type: keyword
-- name: ob
-  description: operation object id
-  example: Please add example
-  type: text
-- name: obn
-  description: operation object name
-  example: Please add example
-  type: text
-- name: co
-  description: operation content message
-  example: Please add example
+  type: group
+  fields:
+  - name: thread
+    description: Please add description
+    example: Please add example
+    type: text
+  - name: level
+    description: Please add description
+    example: Please add example
+    type: keyword
+  - name: class
+    description: Please add description
+    example: Please add example
+  - name: logmessage
+    description: Please add description
+    example: Please add example
+  - name: optype
+    description: Please add description
+    example: Please add example
+  - name: st
+    description: Please add description
+    example: Please add example
+    type: long
+  - name: ap
+    description: Please add description
+    example: Please add example
+    type: text
+  - name: apn
+    description: Please add description
+    example: Please add example
+    type: text
+  - name: op
+    description: Please add description
+    example: Please add example
+    type: text
+  - name: opn
+    description: Please add description
+    example: Please add example
+    type: text
+  - name: ip
+    description: Please add description
+    example: Please add example
+  - name: ty
+    description: Please add description
+    example: Please add example
+    type: keyword
+  - name: ob
+    description: Please add description
+    example: Please add example
+    type: text
+  - name: obn
+    description: Please add description
+    example: Please add example
+    type: text
+  - name: co
+    description: Please add description
+    example: Please add example
