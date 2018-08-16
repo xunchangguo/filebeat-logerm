@@ -14,20 +14,23 @@
   - name: class
     description: Please add description
     example: Please add example
+    type: text
   - name: logmessage
     description: Please add description
     example: Please add example
+    type: text
   - name: optype
     description: Please add description
     example: Please add example
+    type: keyword
   - name: st
     description: Please add description
     example: Please add example
-    type: long
+    type: short
   - name: ap
     description: Please add description
     example: Please add example
-    type: text
+    type: keyword
   - name: apn
     description: Please add description
     example: Please add example
@@ -35,7 +38,7 @@
   - name: op
     description: Please add description
     example: Please add example
-    type: text
+    type: keyword
   - name: opn
     description: Please add description
     example: Please add example
@@ -43,6 +46,7 @@
   - name: ip
     description: Please add description
     example: Please add example
+    type: ip
   - name: ty
     description: Please add description
     example: Please add example
@@ -50,7 +54,7 @@
   - name: ob
     description: Please add description
     example: Please add example
-    type: text
+    type: keyword
   - name: obn
     description: Please add description
     example: Please add example
@@ -58,3 +62,4 @@
   - name: co
     description: Please add description
     example: Please add example
+    type: text
